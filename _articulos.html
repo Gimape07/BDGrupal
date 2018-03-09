@@ -1,0 +1,242 @@
+<style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #738CD1;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+    
+    .iconos{
+       width: 18px;
+    
+      height: 20px;
+    
+      vertical-align: text-bottom;
+      
+      margin-right: 3px;
+
+    }
+    
+    
+
+    
+  </style>
+  
+    
+    
+
+
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+
+            <ul class="nav flex-column">
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="login.php">
+
+                  <span data-feather="home"></span>
+
+                  Inicio <span class="sr-only">(current)</span>
+
+                </a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="instituciones.php">
+
+                  <span data-feather="users"></span>
+
+                  Instituciones
+
+                </a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="evento.php">
+
+                  <span data-feather="layout"></span>
+
+                  Eventos
+
+                </a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="capsula.php">
+
+                  <span data-feather="video"></span>
+
+                  Capsulas
+
+                </a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link active" href="articulos.php">
+
+                  <span data-feather="folder"></span>
+
+                  Artículos
+
+                </a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="cursos.php">
+
+                  <span data-feather="book-open"></span>
+
+                  Cursos
+
+                </a>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </nav>
+        
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"> <!-- Mete todo el cuerpo aqui-->
+
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Artículos</h4>
+      
+      
+      <ul class="nav flex-column nav-pills"  >
+        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Educación ambiental</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Energía</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Reciclaje</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">+ Agrega Artículo</a></li>
+      </ul>
+      
+      <br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Busca en el Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span data-feather="search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <h2>Un artículo</h2>
+      <h6><span data-feather="clock" class="iconos"></span>Publicado por Juan Perez, Oct 21, 2015.</h6>
+      <h6><span class="badge badge-primary">Reciclaje</span>
+      <span class="badge badge-secondary">Tag 1</span></h6>
+      <p>Mmodo conseiqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <br><br>
+      
+      <hr>
+      <h2>Otro artículo</h2>
+      <h6><span data-feather="clock" class="iconos"></span>Publicado por Charles Lee Ray, Oct 21, 2015.</h6>
+      <h6><span class="badge badge-danger">Tag 1</span></h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <hr>
+
+
+
+      <h4>Deja un comentario:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+      
+      
+      
+      
+      
+      
+      <p><span class="badge badge-secondary">2</span> Comments:</p><br>
+      
+      <div class="row">
+        <div class="col-sm-2 text-center">
+          <img src="img/avatar.png" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>Hugo <small>Oct 21, 2015, 4:29 PM</small></h4>
+          <p>Kincididunt ut lincididunt ut lore et dolore magna aliqolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <br>
+        </div>
+        <div class="col-sm-2 text-center">
+          <img src="img/avatar.png" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>Paco <small>Oct 21, 2015, 4:29 PM</small></h4>
+          <p>tur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo volu</p>
+          <br>
+          <p><span class="badge badge-secondary">1</span> Comment:</p><br>
+          <div class="row">
+            <div class="col-sm-2 text-center">
+              <img src="img/avatar.png" class="img-circle" height="65" width="65" alt="Avatar">
+            </div>
+            <div class="col-sm-10">
+              <h4>Luis <small>Oct 21, 2015, 4:29 PM</small></h4>
+              <p>uasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
