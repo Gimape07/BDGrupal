@@ -10,7 +10,7 @@
                   
                   <?php else: ?>
                 
-                  <a class="nav-link active" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+                  <a class="nav-link active" href="#" tabindex="0" data-container="nav" data-toggle="popover" data-trigger="focus" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
                     
                   <?php endif; ?>
 
@@ -28,7 +28,7 @@
                 
                   <?php else: ?>
 
-                  <a class="nav-link" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+                  <a class="nav-link" href="#" tabindex="0" data-container="nav" data-toggle="popover" data-trigger="focus" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
                   
                   <?php endif; ?>
                   
@@ -46,7 +46,7 @@
                 
                   <?php else: ?>
                 
-                  <a class="nav-link" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+                  <a class="nav-link" href="#" tabindex="0" data-container="nav" data-toggle="popover" data-trigger="focus" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
 
                   <?php endif; ?>
 
@@ -64,7 +64,7 @@
                 
                   <?php else: ?>
                   
-                  <a class="nav-link" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+                  <a class="nav-link" href="#" tabindex="0" data-container="nav" data-toggle="popover" data-trigger="focus" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
 
                   <?php endif; ?>
 
@@ -82,7 +82,7 @@
                 
                   <?php else: ?>
                   
-                  <a class="nav-link" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+                  <a class="nav-link" href="#" tabindex="0" data-container="nav" data-toggle="popover" data-trigger="focus" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
 
                   <?php endif; ?>
                   
@@ -100,7 +100,7 @@
                 
                   <?php else: ?>
                   
-                  <a class="nav-link" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+                  <a class="nav-link" href="#" tabindex="0" data-container="nav" data-toggle="popover" data-trigger="focus" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
 
                   <?php endif; ?>
 
@@ -121,10 +121,12 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"> <!-- Mete todo el cuerpo aqui-->
          
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-
             
-            
-            <h1 class="h2">Soy General</h1>
+            <?php if(isset($_SESSION["usuario"])): ?>
+              <h1 class="h2">Bienvenido: <?=$user?></h1>
+            <?php else: ?>
+              <h1 class="h2">Adquiere una Membresía<?=$user?></h1>
+            <?php endif; ?>
 
             <div class="btn-toolbar mb-2 mb-md-0">
 
@@ -152,19 +154,33 @@
 
           <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
           
+          <div class="album py-5 bg-light">
+          
+          <div class="container marketing">
+            
+            <h1>Top 3 Instituciones</h1>
+            
+            <br>
+          
+          <div class="row">
+          
           <div class="col-lg-4">
+          <img class="" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           </div>
           
           <div class="col-lg-4">
+          <img class="" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           </div>
           
           <div class="col-lg-4">
+          <img class="" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          </div>
+          
+          </div>
+          </div>
           </div>
 
           <h2>Section title</h2>

@@ -1,6 +1,8 @@
 <?php
     session_start();
-
+    
+    require_once("hockey_pack.php");
+    
     if(isset($_SESSION["usuario"]) ) {
         $user = $_SESSION["usuario"];
         include("_header.html");
