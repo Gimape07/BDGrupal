@@ -91,7 +91,7 @@
         return false;
     }
     
-    function eliminarCapsula($id){
+    function eliminarCapsula($idCapsula){
         $db = connect();
         if ($db != NULL) {
             // Deletion query construction
@@ -184,7 +184,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <a class="btn btn-sm btn-outline-secondary" href="editarCapsula.php?id='.$fila["idCapsula"].'&titulo='.$fila["titulo"].'&enlace='.$fila["enlaceCapsula"].'" role="button">Editar</a>
-                                            <a class="btn btn-sm btn-outline-secondary" href="eliminarCapsula.php?id='.$fila["idCapsula"].'" role="button">Eliminar</a>
+                                            <a class="btn btn-sm btn-outline-secondary" role="button" href="#" data-href="/eliminarCapsula.php?id='.$fila["idCapsula"].'" data-toggle="modal" data-target="#confirm-delete">Eliminar</a>
                                         </div>
                                     <small class="text-muted">9 mins</small>
                                         </div>
@@ -223,6 +223,39 @@
                                 <div class="card-body">
                                     <h5 class="card-title">'.$fila["titulo"].'</h5>
                                     <p class="card-text">'.$fila["descripcion"].'</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            ';
+            echo $html;
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        return true;
+    }
+    
+    function getRol($user){
+        $db = connect();
+        if ($db != NULL) {
+            
+            //Specification of the SQL query
+            $query='SELECT * FROM Usuario_Rol WHERE nUser='.$user;
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+             // cycle to explode every line of the results
+            $html = '';
+            $fila = mysqli_fetch_array($results, MYSQLI_BOTH);
+            $html .= '<div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        
+                                    </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">'.$fila["idRol"].'</h5>
                                     </div>
                                 </div>
                             </div>

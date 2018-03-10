@@ -1,6 +1,6 @@
 <?php
     session_start();
-    
+    require_once("func_Art.php");
 
     if(isset($_SESSION["usuario"]) ) {
         $user = $_SESSION["usuario"];

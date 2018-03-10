@@ -83,6 +83,25 @@
         </nav>
         
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"> <!-- Mete todo el cuerpo aqui-->
+        
+        <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Confirmar Eliminación: </h4>
+                        <button type="button" class="close left" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Estas cerca de eliminar la entrada selecionada</p>
+                        <p>¿Deseas continuar?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                          <a class="btn btn-danger btn-ok">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <div class="album py-5 bg-light">
         <div class="container">
