@@ -5,9 +5,9 @@
     if(isset($_SESSION["usuario"]) ) {
         $user = $_SESSION["usuario"];
         include("_header.html");
-        include("_editar.html");
+        include("_agregarCapsula.html");
         include("_footer.html"); 
     } else {
-        header("location:index.php");
+        header("location:indexLogin.php");
     }
 ?>
