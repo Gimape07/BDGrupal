@@ -157,8 +157,63 @@
         <li class="nav-item"><a class="nav-link" href="#">Educación ambiental</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Energía</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Reciclaje</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">+ Agrega Artículo</a></li>
+        <li class="nav-item"><a data-toggle="modal" data-target="#myModal" class="nav-link" href="#">+ Agrega Artículo</a></li>
       </ul>
+      
+  
+  
+  
+      
+      
+       <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Agregar un artículo</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form action="add_articulo.php" method="POST">
+            <div class="form-group">
+              <label for="titulo">Título:</label>
+              <input type="text" class="form-control" id="titulo" required name="titulo"></input>
+            </div>
+            
+            <div class="form-group">
+              <label for="descripcion">Descripcion...</label>
+              <textarea class="form-control" rows="5" id="descripcion" required name="descripcion"></textarea>
+            </div>
+              <button type="submit" class="btn btn-success">Submit</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </form>      
+        </div>
+        
+        <!-- Modal footer -->
+        
+        
+        
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      
+      
+      
+      
       
       <br>
       <div class="input-group">

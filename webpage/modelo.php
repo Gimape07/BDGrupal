@@ -66,16 +66,16 @@
         return false;
     }
     
-    function editarProducto($nombre, $id){
+    function editarCapsula($titulo, $descripcion, $enlace, $id){
         $db = connect();
         if ($db != NULL) {
             // update command specification
-            $query='UPDATE productos SET nombre=? WHERE id=?';
+            $query='UPDATE Capsula SET titulo=?, descripcion=?, enlaceCapsula=? WHERE idCapsula=?';
             if (!($statement = $db->prepare($query))) {
                 die("The preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("ss", $nombre, $id)) {
+            if (!$statement->bind_param("ssss", $titulo, $descripcion, $enlace, $id)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             } 
             // update execution
@@ -91,16 +91,16 @@
         return false;
     }
     
-    function eliminarProducto($id){
+    function eliminarCapsula($id){
         $db = connect();
         if ($db != NULL) {
             // Deletion query construction
-            $query = 'DELETE FROM productos WHERE id=?';
+            $query = 'DELETE FROM Capsula WHERE idCapsula=?';
             if (!($statement = $db->prepare($query))) {
                 die("The preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("s", $id)) {
+            if (!$statement->bind_param("s", $idCapsula)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             } 
             // delete execution
@@ -158,12 +158,12 @@
         return false;
     }
     
-    function getProductos() {
+    function getCapsulas() {
         $db = connect();
         if ($db != NULL) {
             
             //Specification of the SQL query
-            $query='SELECT * FROM productos';
+            $query='SELECT * FROM Capsula';
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
@@ -173,23 +173,26 @@
                                                 // Options: MYSQLI_NUM to use only numeric indexes
                                                 // MYSQLI_ASSOC to use only name (string) indexes
                                                 // MYSQLI_BOTH, to use both
-                    $html .= '<div class="row">
-                                <div class="col s12 m7">
-                                  <div class="card">
-                                    <div class="card-image">
-                                      <img src="uploads/'.$fila["imagen"].'">
-                                      <span class="card-title">'.$fila["nombre"].'</span>
+                    $html .= '<div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="'.$fila["enlaceCapsula"].'" allowfullscreen></iframe>
                                     </div>
-                                    <div class="card-content">
-                                      <p>Publicado el: '.$fila["created_at"].'.</p>
+                                <div class="card-body">
+                                    <h5 class="card-title">'.$fila["titulo"].'</h5>
+                                    <p class="card-text">'.$fila["descripcion"].'</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary" href="editarCapsula.php?id='.$fila["idCapsula"].'&titulo='.$fila["titulo"].'&enlace='.$fila["enlaceCapsula"].'" role="button">Editar</a>
+                                            <a class="btn btn-sm btn-outline-secondary" href="eliminarCapsula.php?id='.$fila["idCapsula"].'" role="button">Eliminar</a>
+                                        </div>
+                                    <small class="text-muted">9 mins</small>
+                                        </div>
                                     </div>
-                                    <div class="card-action">
-                                      <a href="editar.php?id='.$fila["id"].'">Editar</a>
-                                      <a href="delete.php?id='.$fila["id"].'">Eliminar</a>
-                                    </div>
-                                  </div>
                                 </div>
-                              </div>';
+                            </div>
+                            
+                            ';
             }
             echo $html;
             // it releases the associated results
@@ -200,30 +203,31 @@
         return true;
     }
     
-    function getProducto($id) {
+    function getCapsula($idCapsula) {
         $db = connect();
         if ($db != NULL) {
             
             //Specification of the SQL query
-            $query='SELECT * FROM productos WHERE id='.$id;
+            $query='SELECT * FROM Capsula WHERE idCapsula='.$idCapsula;
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
              // cycle to explode every line of the results
             $html = '';
             $fila = mysqli_fetch_array($results, MYSQLI_BOTH);
-            $html .= '<div class="row">
-                                <div class="col s12 m7">
-                                  <div class="card">
-                                    <div class="card-image">
-                                      <img src="uploads/'.$fila["imagen"].'">
+            $html .= '<div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="'.$fila["enlaceCapsula"].'" allowfullscreen></iframe>
                                     </div>
-                                    <div class="card-content">
-                                      <p>Publicado el: '.$fila["created_at"].'.</p>
+                                <div class="card-body">
+                                    <h5 class="card-title">'.$fila["titulo"].'</h5>
+                                    <p class="card-text">'.$fila["descripcion"].'</p>
                                     </div>
-                                  </div>
                                 </div>
-                              </div>';
+                            </div>
+                            
+                            ';
             echo $html;
             // it releases the associated results
             mysqli_free_result($results);

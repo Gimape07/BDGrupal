@@ -1,0 +1,127 @@
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+
+            <ul class="nav flex-column">
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="login.php">
+
+                  <span data-feather="home"></span>
+
+                  Inicio <span class="sr-only">(current)</span>
+
+                </a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="instituciones.php">
+
+                  <span data-feather="users"></span>
+
+                  Instituciones
+
+                </a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="evento.php">
+
+                  <span data-feather="layout"></span>
+
+                  Eventos
+
+                </a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link active" href="capsula.php">
+
+                  <span data-feather="video"></span>
+
+                  Capsulas
+
+                </a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="articulos.php">
+
+                  <span data-feather="folder"></span>
+
+                  Artículos
+
+                </a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="cursos.php">
+
+                  <span data-feather="book-open"></span>
+
+                  Cursos
+
+                </a>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </nav>
+        
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"> <!-- Mete todo el cuerpo aqui-->
+    
+    
+    <div class="section">
+        
+        <h3>Edición de Capsula</h3>
+        
+        <br>
+        <form action="editValoresCapsula.php" method="POST">
+          <div class="form-group">
+            <label for="titulo">Nuevo Título</label>
+            <?php
+                $html = '';
+                $html .= '<input type="text" class="form-control" id="titulo" name="titulo" value="'.$_GET["titulo"].'" required>';
+                echo $html;
+            ?>
+          </div>
+          <div class="form-group">
+            <label for="desc">Nueva Descripción</label>
+            <input type="text" class="form-control" id="desc" name="desc">
+          </div>
+          <div class="form-group">
+            <label for="video">Modificar Enlace de Video</label>
+            <?php
+                $html = '';
+                $html .= '<input type="text" class="form-control" id="video" name="video" value="'.$_GET["enlace"].'" required>';
+                echo $html;
+            ?>
+          </div>
+          <?php
+                $html = '';
+                $html .= '<div class="form-group">
+                            <input id="id" type="hidden" name="id" value="'.$_GET["id"].'" required>
+                        </div>';
+                echo $html;
+            ?>
+          <button type="submit" class="btn btn-primary" name="action">Confirmar</button>
+        </form>
+        
+        <br><br>
+        
+        <?php getCapsula($_GET["id"])?>
+    </div>
+</div>
