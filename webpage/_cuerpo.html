@@ -1,4 +1,4 @@
-
+        
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
 
@@ -6,7 +6,13 @@
 
               <li class="nav-item">
 
-                <a class="nav-link active" href="indexLogin.php">
+                <?php if(isset($_SESSION["usuario"])): ?><a class="nav-link active" href="indexLogin.php">
+                  
+                  <?php else: ?>
+                
+                  <a class="nav-link active" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+                    
+                  <?php endif; ?>
 
                   <span data-feather="home"></span>
 
@@ -18,8 +24,14 @@
 
               <li class="nav-item">
 
-                <a class="nav-link" href="instituciones.php">
+                <?php if(isset($_SESSION["usuario"])): ?><a class="nav-link" href="instituciones.php">
+                
+                  <?php else: ?>
 
+                  <a class="nav-link" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+                  
+                  <?php endif; ?>
+                  
                   <span data-feather="users"></span>
 
                   Instituciones
@@ -30,7 +42,13 @@
 
               <li class="nav-item">
 
-                <a class="nav-link" href="evento.php">
+                <?php if(isset($_SESSION["usuario"])): ?><a class="nav-link" href="evento.php">
+                
+                  <?php else: ?>
+                
+                  <a class="nav-link" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+
+                  <?php endif; ?>
 
                   <span data-feather="layout"></span>
 
@@ -42,7 +60,13 @@
 
               <li class="nav-item">
 
-                <a class="nav-link" href="capsula.php">
+                <?php if(isset($_SESSION["usuario"])): ?><a class="nav-link" href="capsula.php">
+                
+                  <?php else: ?>
+                  
+                  <a class="nav-link" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+
+                  <?php endif; ?>
 
                   <span data-feather="video"></span>
 
@@ -54,8 +78,14 @@
 
               <li class="nav-item">
 
-                <a class="nav-link" href="articulos.php">
+                <?php if(isset($_SESSION["usuario"])): ?><a class="nav-link" href="articulos.php">
+                
+                  <?php else: ?>
+                  
+                  <a class="nav-link" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
 
+                  <?php endif; ?>
+                  
                   <span data-feather="folder"></span>
 
                   Artículos
@@ -66,7 +96,13 @@
 
               <li class="nav-item">
 
-                <a class="nav-link" href="cursos.php">
+                <?php if(isset($_SESSION["usuario"])): ?><a class="nav-link" href="cursos.php">
+                
+                  <?php else: ?>
+                  
+                  <a class="nav-link" href="#" data-container="nav" data-toggle="popover" data-placement="left" title="Privilegio de Membresía" data-content="Adquiere una membresía para poder acceder a esta función.">
+
+                  <?php endif; ?>
 
                   <span data-feather="book-open"></span>
 
@@ -86,7 +122,9 @@
          
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
 
-            <h1 class="h2">Dashboard</h1>
+            
+            
+            <h1 class="h2">Soy General</h1>
 
             <div class="btn-toolbar mb-2 mb-md-0">
 
@@ -113,8 +151,21 @@
 
 
           <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
-
-
+          
+          <div class="col-lg-4">
+          <h2>Heading</h2>
+          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          </div>
+          
+          <div class="col-lg-4">
+          <h2>Heading</h2>
+          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          </div>
+          
+          <div class="col-lg-4">
+          <h2>Heading</h2>
+          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          </div>
 
           <h2>Section title</h2>
 
@@ -365,7 +416,7 @@
                   <td>libero</td>
 
                 </tr>
-
+                
               </tbody>
 
             </table>
