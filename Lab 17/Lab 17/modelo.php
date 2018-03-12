@@ -787,8 +787,135 @@
     
 
 
-
-
-
-
+    function getAreatrabajo(){
+        $db = connect();
+        if ($db != NULL) {
+            
+            //Specification of the SQL query
+            $query='SELECT * FROM areatrabajo WHERE 1';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+             // cycle to explode every line of the results
+           $html =  '<div class="container">
+                        <h2>Áreas de trabajo</h2>
+                        <p>Listado de áreas de trabajo</p>            
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>';
+           $columnas = $results->fetch_fields();
+           for($i=0; $i<count($columnas); $i++) {
+                $html .= '<th>'.$columnas[$i]->name.'</th>';
+           }
+           $html .= '</tr>';
+           $html .= '</thead>';
+           $html .= '<tbody>';
+           while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                                                // Options: MYSQLI_NUM to use only numeric indexes
+                                                // MYSQLI_ASSOC to use only name (string) indexes
+                                                // MYSQLI_BOTH, to use both
+                    $html .= '<tr>';
+                    for($i=0; $i<count($columnas); $i++) {
+                        // use of numeric index
+                        $html .= '<td>'.$fila[$i].'</td>'; 
+                    }
+                    $html .= '</tr>';
+            }
+            $html .= '</tbody></table></div>';   
+            echo $html;
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        return false;
+    }
+    
+    
+    function getSecciones(){
+        $db = connect();
+        if ($db != NULL) {
+            
+            //Specification of the SQL query
+            $query='SELECT * FROM secciones WHERE 1';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+             // cycle to explode every line of the results
+           $html =  '<div class="container">
+                        <h2>Secciones</h2>
+                        <p>Listado de secciones</p>            
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>';
+           $columnas = $results->fetch_fields();
+           for($i=0; $i<count($columnas); $i++) {
+                $html .= '<th>'.$columnas[$i]->name.'</th>';
+           }
+           $html .= '</tr>';
+           $html .= '</thead>';
+           $html .= '<tbody>';
+           while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                                                // Options: MYSQLI_NUM to use only numeric indexes
+                                                // MYSQLI_ASSOC to use only name (string) indexes
+                                                // MYSQLI_BOTH, to use both
+                    $html .= '<tr>';
+                    for($i=0; $i<count($columnas); $i++) {
+                        // use of numeric index
+                        $html .= '<td>'.$fila[$i].'</td>'; 
+                    }
+                    $html .= '</tr>';
+            }
+            $html .= '</tbody></table></div>';   
+            echo $html;
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        return false;
+    }
+    function getPrivilegios(){
+        $db = connect();
+        if ($db != NULL) {
+            
+            //Specification of the SQL query
+            $query='SELECT * FROM privilegios WHERE 1';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+             // cycle to explode every line of the results
+           $html =  '<div class="container">
+                        <h2>Privilegios</h2>
+                        <p>Listado de privilegios</p>            
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>';
+           $columnas = $results->fetch_fields();
+           for($i=0; $i<count($columnas); $i++) {
+                $html .= '<th>'.$columnas[$i]->name.'</th>';
+           }
+           $html .= '</tr>';
+           $html .= '</thead>';
+           $html .= '<tbody>';
+           while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                                                // Options: MYSQLI_NUM to use only numeric indexes
+                                                // MYSQLI_ASSOC to use only name (string) indexes
+                                                // MYSQLI_BOTH, to use both
+                    $html .= '<tr>';
+                    for($i=0; $i<count($columnas); $i++) {
+                        // use of numeric index
+                        $html .= '<td>'.$fila[$i].'</td>'; 
+                    }
+                    $html .= '</tr>';
+            }
+            $html .= '</tbody></table></div>';   
+            echo $html;
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        return false;
+    }
 ?>
