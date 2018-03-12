@@ -1,0 +1,66 @@
+<br>
+
+<div class="section">
+        
+        <h3>Realizar Abono</h3>
+        
+        <br>
+        <form action="abono.php" method="POST">
+          <div class="form-group">
+            <label for="cantidadAbono">Cantidad a Abonar</label>
+                <input type="number" min = "1" class="form-control" id="cantidadAbono" name="cantidadAbono" required>
+          </div>
+          <?php
+                $html = '';
+                $html .= '<div class="form-group">
+                            <input id="balance" type="hidden" name="balance" value="'.getBalance($user).'" required>
+                        </div>';
+                echo $html;
+          ?>
+          <?php
+                $html = '';
+                $html .= '<div class="form-group">
+                            <input id="user" type="hidden" name="user" value="'.$user.'" required>
+                        </div>';
+                echo $html;
+            ?>
+          <button type="submit" class="btn btn-primary" name="action">Confirmar</button>
+        </form>
+        
+        <br><br><br>
+        
+        <h3>Realizar Retiro</h3>
+        
+        <br>
+        <form action="retiro.php" method="POST">
+          <div class="form-group">
+            <label for="cantidadRetiro">Cantidad a Retirar</label>
+                <input type="number" min = "1" class="form-control" id="cantidadRetiro" name="cantidadRetiro" required>
+          </div>
+          <?php
+                $html = '';
+                $html .= '<div class="form-group">
+                            <input id="balance" type="hidden" name="balance" value="'.getBalance($user).'" required>
+                        </div>';
+                echo $html;
+            ?>
+          <?php
+                $html = '';
+                $html .= '<div class="form-group">
+                            <input id="user" type="hidden" name="user" value="'.$user.'" required>
+                        </div>';
+                echo $html;
+            ?>
+          <button type="submit" class="btn btn-primary" name="action">Confirmar</button>
+        </form>
+        
+        <br><br>
+
+    </div>
+
+<h3>Tu balance es de: 
+<?php 
+    $balance = getBalance($user);
+    echo $balance;
+?>
+</h3>

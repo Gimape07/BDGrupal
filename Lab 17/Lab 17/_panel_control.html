@@ -1,0 +1,32 @@
+<br>
+
+<center>
+<div class="card" style="background-color:#f5f5f5;">
+<br>
+<?php
+    date_default_timezone_set ('America/Mexico_City');
+    $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+    $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+    echo $dias[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
+    echo "<br>";
+    echo date("H:i:s");  
+    //Salida: Viernes 24 de Febrero del 2012
+    
+    ?>
+    
+<h1>Bienvenido(a): <?php getname($user)?></h1>  
+
+<h1>Rol: <?php 
+$rol=getRol($user);
+echo $rol;
+
+
+
+?>
+</h1>  
+
+<p id="tiempo"></p>
+
+</div>
+
+</center>
